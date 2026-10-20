@@ -1,0 +1,14 @@
+[project]
+name = "kagent-demo-basic-agent"
+version = "0.1.0"
+description = "A minimal Python agent (BYO) deployable to Kubernetes with KAgent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "kagent-openai>=0.10.3",
+    "openai-agents>=0.18.3",
+    "uvicorn>=0.51.0",
+    # kagent-openai 0.10.x 依赖 a2a-sdk 0.3.x 的 a2a.server.apps 模块,
+    # 而 a2a-sdk 1.x 已移除该模块,故必须锁定在 1.0 以下。
+    "a2a-sdk>=0.3.23,<1.0",
+]
